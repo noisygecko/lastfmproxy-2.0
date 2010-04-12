@@ -317,7 +317,7 @@ class proxy:
 
                 if m:
                     for tmp in m.keys():
-                        cont = cont + "np_" + tmp + " = '" + string.replace(m[tmp].decode("utf8"), "'", "\\'") + "';\n"
+                        cont = cont + "np_" + tmp + " = '" + m[tmp].replace("'", "\\'") + "';\n"
 
                 cont = cont + "np_trackprogress = " + str(int(time.time() - self.starttime)) + ";\n"
 
